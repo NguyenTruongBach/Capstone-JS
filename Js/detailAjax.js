@@ -1,6 +1,6 @@
 function getProductByID() {
     var promise = axios({
-        url: "https://shop.cyberlearn.vn/api/Product/getbyid?id=1" ,  //Đường dẫn backend cung cấp
+        url: "https://shop.cyberlearn.vn/api/Product/getbyid?id=1" ,  //Đường dẫn backend cung cấp.
         method: 'GET',//method backend cung cấp
         ResponseType: JSON
     });
