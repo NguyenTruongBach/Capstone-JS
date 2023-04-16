@@ -1,7 +1,9 @@
 function layListProductAPI() {
     var promise = axios({
-        url: 'https://shop.cyberlearn.vn/api/Product',//đường dẫn backend cung cấp
-        method: 'GET', //method backend cung cấp 
+        url: 'https://shop.cyberlearn.vn/api/Product',
+        //đường dẫn backend cung cấp
+        method: 'GET',
+        //method backend cung cấp 
         ResponseType: JSON
 
     })
@@ -54,8 +56,8 @@ for (i=0; i < arrayProduct.length; i++) {
     `
 
 }
-document.querySelector('#productList').innerHTML =html;
- }
+        document.querySelector('#productList').innerHTML =html;
+}
 
 
 

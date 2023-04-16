@@ -2,8 +2,6 @@
 
 document.querySelector('#btnSubmit').onclick = function () {
 
-
-    // console.log('1234');
     var accountNew = new Account()
 
     // lấy thông tin từ người dùng nhập vào 
@@ -18,13 +16,6 @@ document.querySelector('#btnSubmit').onclick = function () {
 
     var confPassword = '';
     confPassword= document.querySelector('#PasswordConfirm').value;
-
-    // console.log(accountNew);
-    // console.log(confPassword);
-  
-
-
-    // validation
 
     var valid = true;
 

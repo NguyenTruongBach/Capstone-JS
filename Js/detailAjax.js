@@ -1,7 +1,9 @@
 function getProductByID() {
     var promise = axios({
-        url: "https://shop.cyberlearn.vn/api/Product/getbyid?id=1" ,  //Đường dẫn backend cung cấp.
-        method: 'GET',//method backend cung cấp
+        url: "https://shop.cyberlearn.vn/api/Product/getbyid?id=1" , 
+         //Đường dẫn backend cung cấp.
+        method: 'GET',
+        //method backend cung cấp
         ResponseType: JSON
     });
     //Xử lý thành công
@@ -49,34 +51,7 @@ const renderProductDetail = (ObjectProduct) => {
 }
 
 
-// const renderRelateProduct = (ObjectProduct) => {
-//     var html = '';
-//     var arrayProduct = ObjectProduct.relatedProducts
-//     for (const value of arrayProduct) {
-//         html += `
-//         <div class="grid-item col-12 col-sm-6 col-lg-4">
-//             <div class="card">
-//             <div class="thumbnail">
-//                 <img src="${value.image}" alt="">
-//             </div>
-//             <div class="detail">
-//                 <h1>${value.name}</h1>
-//                 <p>${value.shortDescription}</p>
-//             </div>
-//             <div class="pay">
-//                 <div class="btn-buy">
-//                     <a href="./detail.html?productid=${value.id}">Buy now</a>
-//                 </div>
-//                 <div class="price">
-//                     <p>${value.price}$</p>
-//                 </div>
-//             </div>
-//         </div>
-//         </div>
-//             `;
-//     }
-//     document.querySelector('.grid-content').innerHTML = html;
-// }
+
 function layListProductAPI() {
     var promise = axios({
         url: 'https://shop.cyberlearn.vn/api/Product',//đường dẫn backend cung cấp
@@ -88,7 +63,6 @@ function layListProductAPI() {
     // xử lý thành công 
     promise.then(function (result) {
         console.log(result.data.content);
-        //sau khi lấy dữ liệu từ backend về dùng dữ liệu đó tạo ra giao diện
         renderProduct(result.data.content);
     })
     //xử lý thất bại 
@@ -96,9 +70,6 @@ function layListProductAPI() {
     })
 }
 
-    // console.log (layListProductAPI())
-
-// }
 // gọi hàm lấy dữ liệu từ server khi trang web vừa load xong
 window.onload = function () {
     layListProductAPI();
