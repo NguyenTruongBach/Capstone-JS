@@ -1,14 +1,10 @@
-//validation for registration
-
 /**
- * Hàm nhận vào 2 tham số và trả về đúng hoặc sai. True khi hợp lệ, false khi ko hợp lệ
- * @param {*} value giá trị đầu vào 
- * @param {*} selectorError nơi in ra lỗi 
- * @param {*} name là text hiện trị ra tên trường bị lỗi
- */
+ * @param {*} value 
+ * @param {*} selectorError  
+ * @param {*} name 
+*/
  function kiemTraRong (value, selectorError, name) {
-    //.trim (): loại bỏ khoảng trống đầu và cuối chuỗi
-    //    abc    => abc 
+
     if (value.trim() !== '') 
     {
         document.querySelector(selectorError).innerHTML = '';
@@ -18,7 +14,6 @@
     return false;
     }
 
-    
     function kiemTraTatCaKyTu (value, selectorError, name) {
         var regexLetter = /^[A-Z a-z]+$/;
         if (regexLetter.test(value)) {
@@ -77,16 +72,14 @@
             return false;
          }
          document.querySelector(selectorError).innerHTML = ''; 
-            return true;
-    
+            return true;    
      }
-
      /**
       * 
-      * @param {*} password password khởi tạo
-      * @param {*} confirmedpassword confirm lại password
-      * @param {*} selectorError nơi in ra lỗi 
-      * @param {*} name text hiển thị ra khi lỗi
+      * @param {*} password 
+      * @param {*} confirmedpassword 
+      * @param {*} selectorError
+      * @param {*} name
       * @returns 
       */
 
@@ -99,8 +92,6 @@ function kiemtraPassword (password, confirmedpassword,selectorError, name) {
 
     document.querySelector(selectorError).innerHTML = ''; 
     return true;
-    
-
 }
     
     

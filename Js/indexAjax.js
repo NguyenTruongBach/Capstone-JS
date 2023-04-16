@@ -14,24 +14,20 @@ function layListProductAPI() {
         //sau khi lấy dữ liệu từ backend về dùng dữ liệu đó tạo ra giao diện
         renderProduct(result.data.content);
     })
-    //xử lý thất bại 
-    promise.catch(function (err) {
+        //xử lý thất bại 
+        promise.catch(function (err) {
     })
 }
 
-    // console.log (layListProductAPI())
-
-// }
-// gọi hàm lấy dữ liệu từ server khi trang web vừa load xong
-window.onload = function () {
+    // gọi hàm lấy dữ liệu từ server khi trang web vừa load xong
+    window.onload = function () {
     layListProductAPI();
 
 }
-// tạo hàm render dữ liệu sản phẩm ra màn hình 
-
-function renderProduct (arrayProduct) {
+    // tạo hàm render dữ liệu sản phẩm ra màn hình 
+    function renderProduct (arrayProduct) {
     var html = '';
-for (i=0; i < arrayProduct.length; i++) {
+    for (i=0; i < arrayProduct.length; i++) {
     var product = arrayProduct[i];
 
     html += `

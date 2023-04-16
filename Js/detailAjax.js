@@ -1,3 +1,4 @@
+
 function getProductByID() {
     var promise = axios({
         url: "https://shop.cyberlearn.vn/api/Product/getbyid?id=1" , 
@@ -50,12 +51,12 @@ const renderProductDetail = (ObjectProduct) => {
     document.querySelector('.container').innerHTML = html;
 }
 
-
-
 function layListProductAPI() {
     var promise = axios({
-        url: 'https://shop.cyberlearn.vn/api/Product',//đường dẫn backend cung cấp
-        method: 'GET', //method backend cung cấp 
+        url: 'https://shop.cyberlearn.vn/api/Product',
+        //đường dẫn backend cung cấp
+        method: 'GET',
+        //method backend cung cấp 
         ResponseType: JSON
 
     })
@@ -65,17 +66,16 @@ function layListProductAPI() {
         console.log(result.data.content);
         renderProduct(result.data.content);
     })
+
     //xử lý thất bại 
     promise.catch(function (err) {
     })
 }
 
-// gọi hàm lấy dữ liệu từ server khi trang web vừa load xong
-window.onload = function () {
+    // gọi hàm lấy dữ liệu từ server khi trang web vừa load xong
+    window.onload = function () {
     layListProductAPI();
-
 }
-// tạo hàm render dữ liệu sản phẩm ra màn hình 
 
 function renderProduct (arrayProduct) {
     var html = '';
@@ -102,8 +102,8 @@ for (i=0; i < arrayProduct.length; i++) {
     </div>
 
     `
-
 }
+
 document.querySelector('#productList').innerHTML =html;
  }
 window.onload = function () {
