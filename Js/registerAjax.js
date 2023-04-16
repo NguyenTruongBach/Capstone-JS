@@ -24,25 +24,21 @@ document.querySelector('#btnSubmit').onclick = function () {
     valid &= kiemtraPassword(accountNew.password,confPassword,'#error_match_password', 'Mật khẩu xác nhận')
 
 
-    /* ----------- kiểm tra định dạng dữ liệu----------*/
-
+    /*kiểm tra định dạng dữ liệu*/
     valid &= kiemTraTatCaKyTu(accountNew.name, '#error_name', 'Tên') & kiemTraTatCaSo(accountNew.phone, '#error_phone', 'Số điện thoại') & kiemTraEmail(accountNew.email, '#error_email', 'Email');
 
-    /* ----------- kiểm tra độ dài----------*/
-
+    /*kiểm tra độ dài*/
     valid &= kiemTraDoDai(accountNew.password, '#error_password', 'Password', 6, 32);
-
     if (!valid) {
         return;
     }
-
 
     //gọi api đưa dữ liệu về backend
     var promise = axios({
         url: 'https://shop.cyberlearn.vn/api/Users/signup',
         method: 'POST',
-        data: accountNew //dữ liệu gửi đi
-
+        data: accountNew 
+        //dữ liệu gửi đi
     })
 
     promise.then(function (result) {

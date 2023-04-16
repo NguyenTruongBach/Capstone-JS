@@ -1,4 +1,3 @@
-
 function getProductByID() {
     var promise = axios({
         url: "https://shop.cyberlearn.vn/api/Product/getbyid?id=1" , 
